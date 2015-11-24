@@ -1,6 +1,7 @@
 package com.example.sidda.portfolio;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -9,9 +10,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String PREPEND_TEXT = "This button will launch my ";
+    @Bind(R.id.spotifyStreamerButton) Button spotifyStreamerButton;
+    @Bind(R.id.scoresAppButton) Button scoresAppButton;
+    @Bind(R.id.libraryAppButton) Button libraryAppButton;
+    @Bind(R.id.buildItBiggerButton) Button buildItBiggerButton;
+    @Bind(R.id.xyzButton) Button xyzButton;
+    @Bind(R.id.capstoneButton) Button capstoneButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,14 +30,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        Button spotifyStreamerButton = (Button) findViewById(R.id.spotifyStreamerButton);
-        Button scoresAppButton = (Button) findViewById(R.id.scoresAppButton);
-        Button libraryAppButton = (Button) findViewById(R.id.libraryAppButton);
-        Button buildItBiggerButton = (Button) findViewById(R.id.buildItBiggerButton);
-        Button xyzButton = (Button) findViewById(R.id.xyzButton);
-        Button capstoneButton = (Button) findViewById(R.id.capstoneButton);
-
+        // adding view injection butter knife
+        ButterKnife.bind(this);
+/**
         spotifyStreamerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
                 toast.show();
             }
         });
-        /**
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -109,5 +114,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Nullable
+    @OnClick({R.id.spotifyStreamerButton, R.id.scoresAppButton, R.id.libraryAppButton, R.id.buildItBiggerButton, R.id.xyzButton,R.id.capstoneButton})
+    public void buttonClick(Button button) {
+        Toast toast = Toast.makeText(getApplicationContext(), PREPEND_TEXT+ button.getText() + " app", Toast.LENGTH_SHORT);
+        toast.show();
     }
 }
