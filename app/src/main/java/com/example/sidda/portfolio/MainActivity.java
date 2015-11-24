@@ -20,14 +20,14 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Button b1 = (Button) findViewById(R.id.button1);
-        Button b2 = (Button) findViewById(R.id.button2);
-        Button b3 = (Button) findViewById(R.id.button3);
-        Button b4 = (Button) findViewById(R.id.button4);
-        Button b5 = (Button) findViewById(R.id.button5);
-        Button b6 = (Button) findViewById(R.id.button6);
+        Button spotifyStreamerButton = (Button) findViewById(R.id.spotifyStreamerButton);
+        Button scoresAppButton = (Button) findViewById(R.id.scoresAppButton);
+        Button libraryAppButton = (Button) findViewById(R.id.libraryAppButton);
+        Button buildItBiggerButton = (Button) findViewById(R.id.buildItBiggerButton);
+        Button xyzButton = (Button) findViewById(R.id.xyzButton);
+        Button capstoneButton = (Button) findViewById(R.id.capstoneButton);
 
-        b1.setOnClickListener(new View.OnClickListener() {
+        spotifyStreamerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast toast = Toast.makeText(getApplicationContext(), PREPEND_TEXT+" spotify streamer app", Toast.LENGTH_SHORT);
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        b2.setOnClickListener(new View.OnClickListener() {
+        scoresAppButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast toast = Toast.makeText(getApplicationContext(), PREPEND_TEXT + " scores app", Toast.LENGTH_SHORT);
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        b3.setOnClickListener(new View.OnClickListener() {
+        libraryAppButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast toast = Toast.makeText(getApplicationContext(), PREPEND_TEXT+" library app", Toast.LENGTH_SHORT);
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        b4.setOnClickListener(new View.OnClickListener() {
+        buildItBiggerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast toast = Toast.makeText(getApplicationContext(), PREPEND_TEXT+" build it bigger app", Toast.LENGTH_SHORT);
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        b5.setOnClickListener(new View.OnClickListener() {
+        xyzButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast toast = Toast.makeText(getApplicationContext(), PREPEND_TEXT+" xyz reader app", Toast.LENGTH_SHORT);
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        b6.setOnClickListener(new View.OnClickListener() {
+        capstoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast toast = Toast.makeText(getApplicationContext(), PREPEND_TEXT+" capstone app", Toast.LENGTH_SHORT);
